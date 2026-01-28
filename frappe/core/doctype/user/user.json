@@ -17,6 +17,7 @@
   "column_break0",
   "full_name",
   "username",
+  "company",
   "column_break_11",
   "language",
   "time_zone",
@@ -277,8 +278,7 @@
    "fieldname": "mobile_no",
    "fieldtype": "Data",
    "label": "Mobile No",
-   "options": "Phone",
-   "unique": 1
+   "options": "Phone"
   },
   {
    "fieldname": "birth_date",
@@ -827,6 +827,14 @@
    "fieldname": "dashboard",
    "fieldtype": "Check",
    "label": "Dashboard"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Organization",
+   "options": "Company",
+   "print_hide": 1,
+   "remember_last_selected_value": 1
   }
  ],
  "icon": "fa fa-user",
@@ -885,7 +893,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2025-03-17 11:29:39.254304",
+ "modified": "2025-12-10 13:07:00.127673",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",
@@ -911,8 +919,39 @@
    "write": 1
   },
   {
-   "role": "Desk User",
-   "select": 1
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "quick_entry": 1,
