@@ -86,7 +86,7 @@ def after_response_wrapper(app):
 	return application
 
 
-@after_response_wrapper
+#@after_response_wrapper
 @Request.application
 def application(request: Request):
 	response = None

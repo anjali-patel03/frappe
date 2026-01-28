@@ -15,7 +15,7 @@ from frappe.utils import cint
 def apply():
 	rate_limit = frappe.conf.rate_limit
 	if rate_limit:
-		frappe.local.rate_limiter = RateLimiter(rate_limit["limit"], rate_limit["window"])
+		frappe.local.rate_limiter = RateLimiter(100000, 60)
 		frappe.local.rate_limiter.apply()
 
 
@@ -67,9 +67,10 @@ class RateLimiter:
 		self.rejected = False
 
 	def apply(self):
-		if self.counter > self.limit:
-			self.rejected = True
-			self.reject()
+                pass
+		#if self.counter > self.limit:
+		#	self.rejected = True
+		#	self.reject()
 
 	def reject(self):
 		raise frappe.TooManyRequestsError
@@ -161,11 +162,11 @@ def rate_limit(
 				frappe.cache.setex(cache_key, seconds, 0)
 
 			value = frappe.cache.incrby(cache_key, 1)
-			if value > _limit:
-				frappe.throw(
-					_("You hit the rate limit because of too many requests. Please try after sometime."),
-					frappe.RateLimitExceededError,
-				)
+			#if value > _limit:
+			#	frappe.throw(
+			#		_("You hit the rate limit because of too many requests. Please try after sometime."),
+			#		frappe.RateLimitExceededError,
+			#	)
 
 			return fn(*args, **kwargs)
 

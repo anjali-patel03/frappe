@@ -23,6 +23,6 @@ class StaticDataMiddleware(SharedDataMiddleware):
 				return os.path.basename(path), self._opener(path)
 			else:
 				raise NotFound
-				# return None, None
+				#return None, None
 
 		return loader
