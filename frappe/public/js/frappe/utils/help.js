@@ -53,3 +53,4 @@ $("body").on("click", "a.help-link", function () {
 	var doctype = $(this).attr("data-doctype");
 	doctype && frappe.help.show(doctype);
 });
+
